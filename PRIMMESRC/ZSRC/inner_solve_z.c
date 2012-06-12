@@ -300,7 +300,7 @@ int inner_solve_zprimme(Complex_Z *x, Complex_Z *r, double *rnorm,
       tau = tau_prev*Theta*c;
 
       gamma = c*c*Theta_prev*Theta_prev;
-      {ztmp.r = -gamma; ztmp.i = 0.0L;}
+      {ztmp.r = gamma; ztmp.i = 0.0L;}
       zd_mult_primme(eta, alpha_prev, c*c);
       Num_scal_zprimme(primme->nLocal, ztmp, delta, 1);
       Num_axpy_zprimme(primme->nLocal, eta, d, 1, delta, 1);
