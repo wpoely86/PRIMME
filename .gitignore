@@ -2,3 +2,9 @@
 *~
 *.a
 *.so
+DTEST/ddependencies_*
+ZTEST/zdependencies_*
+DTEST/seq_dprimme
+DTEST/seqf77_dprimme
+ZTEST/seq_zprimme
+ZTEST/seqf77_zprimme

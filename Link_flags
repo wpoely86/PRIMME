@@ -10,7 +10,7 @@
 # On Suse Linux use gfortran, NOT g77 (BLAS/LAPACK made with gfortran) 
 # LDR = gfortran
 #---------------------------------------------------------------
-LDR = f77
+LDR = gfortran
 
 INCLUDE = -I$(COMMONDIR)
 LIBDIRS = -L$(TOP)
@@ -20,8 +20,8 @@ LIBDIRS = -L$(TOP)
 #---------------------------------------------------------------
 # Mac OSX 10.4 using veclib for BLAS/LAPACK
 #
- LDFLAGS = -Wl,-framework -Wl,vecLib 
- LIBS = -lprimme -lm 
+# LDFLAGS = -Wl,-framework -Wl,vecLib 
+# LIBS = -lprimme -lm 
 #---------------------------------------------------------------
 # LINUX 2.6.13-15.11-smp (32 bit image)
 #
@@ -31,10 +31,10 @@ LIBDIRS = -L$(TOP)
 #endif
 #---------------------------------------------------------------
 # Linux 2.6.13-15.12-smp (64 bit image)
-#LIBS = -lprimme -lm -L/usr/lib64/ -llapack -lblas -lgfortran -lg2c
-#ifeq ($(CC),c++)
-#LIBS += -lstdc++
-#endif
+LIBS = -lprimme -lm -L/usr/lib64/ -llapack -lblas -lgfortran
+ifeq ($(CC),c++)
+LIBS += -lstdc++
+endif
 #---------------------------------------------------------------
 # CentOS AMD Opteron (64 bit) using g77 and ACML for lapack/blas
 #LIBS = -lprimme -lm -L/usr/local/acml-3.5.0/gnu64/lib/ -lacml -lacml_mv -lg2c

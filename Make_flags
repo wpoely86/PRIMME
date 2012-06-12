@@ -7,7 +7,7 @@
 #---------------------------------------------------------------
 
 # Modify this to show the path of the installed PRIMME directory
-TOP = /home/f85/andreas/RESEARCH/SEND/PRIMME/
+TOP = /tmp/PRIMME
 
 # Define the path to the source code
 SRC = $(TOP)/PRIMMESRC
@@ -31,8 +31,8 @@ ZTESTDIR = $(TOP)/ZTEST
 # On Suse Linux use gfortran, NOT g77 (BLAS/LAPACK made with gfortran) 
 # On Opteron CentOS use g77 
 #---------------------------------------------------------------
-CC = cc
-F77 = f77
+CC = gcc
+F77 = gfortran
 
 #---------------------------------------------------------------
 #  Compiling flags for the PRIMME library
@@ -51,10 +51,11 @@ F77 = f77
 #CFLAGS = -xtarget=generic -xarch=v8plusa
 #---------------------------------------------------------------
 # MAC OSX
-CFLAGS = 
+#CFLAGS =
 #---------------------------------------------------------------
 # Linux 
-#CFLAGS = 
+CFLAGS = -Wall -g -O2
+INCLUDE =
 #---------------------------------------------------------------
 
 FFLAGS = -O  -fno-second-underscore
