@@ -70,13 +70,13 @@ zdotcsub.o: zdotcsub.f
 # Archive complex precision object files in full library
 #
 lib: $(COBJS) $(FOBJS)
-	ar rv $(LIBRARY) $(COBJS) $(FOBJS)
+	$(AR) rv $(LIBRARY) $(COBJS) $(FOBJS)
 	$(RANLIB) $(LIBRARY)
 #
 # Archive complex precision object files in Complex-only library
 #
 libz: $(COBJS) $(FOBJS)
-	ar rv $(ZLIBRARY) $(COBJS) $(FOBJS)
+	$(AR) rv $(ZLIBRARY) $(COBJS) $(FOBJS)
 	$(RANLIB) $(ZLIBRARY)
 
 #

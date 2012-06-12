@@ -31,8 +31,12 @@ ZTESTDIR = $(TOP)/ZTEST
 # On Suse Linux use gfortran, NOT g77 (BLAS/LAPACK made with gfortran) 
 # On Opteron CentOS use g77 
 #---------------------------------------------------------------
-CC = gcc
-F77 = gfortran
+#CC = gcc
+#F77 = gfortran
+
+# intel
+CC = icc
+F77 = ifort
 
 #---------------------------------------------------------------
 #  Compiling flags for the PRIMME library
@@ -53,12 +57,21 @@ F77 = gfortran
 # MAC OSX
 #CFLAGS =
 #---------------------------------------------------------------
+
 # Linux 
-CFLAGS = -Wall -g -O2
+#CFLAGS = -Wall -g -O2
+#AR=ar
+#INCLUDE =
+
+# Linux, intel
+CFLAGS = -Wall -g -O2 -xHost -ipo
+AR=xiar
 INCLUDE =
 #---------------------------------------------------------------
 
-FFLAGS = -O  -fno-second-underscore
+#FFLAGS = -O  -fno-second-underscore
+# intel
+FFLAGS = -O
 LOW_OPT = -O
 HIGH_OPT = -O
 
@@ -66,7 +79,8 @@ HIGH_OPT = -O
 # Preprocessor definition for using F77 under various OS/compilers
 #---------------------------------------------------------------
 
-DEFINES = -DF77UNDERSCORE
+#DEFINES = -DF77UNDERSCORE
+DEFINES =
 # If a C++ compiler is used instead of C add this
 ifeq ($(CC),c++)
 DEFINES += -DCplusplus

@@ -8,3 +8,4 @@ DTEST/seq_dprimme
 DTEST/seqf77_dprimme
 ZTEST/seq_zprimme
 ZTEST/seqf77_zprimme
+DTEST/sample.out

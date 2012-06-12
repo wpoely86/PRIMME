@@ -45,19 +45,19 @@ zdotcsub.o: zdotcsub.f
 # Archive common object files in the target full library
 #
 lib: $(COBJS)
-	ar rv $(LIBRARY) $(COBJS)
+	$(AR) rv $(LIBRARY) $(COBJS)
 	$(RANLIB) $(LIBRARY)
 #
 # Archive common object files in the target Double library
 #
 libd: $(COBJS)
-	ar rv $(DLIBRARY) $(COBJS)
+	$(AR) rv $(DLIBRARY) $(COBJS)
 	$(RANLIB) $(DLIBRARY)
 #
 # Archive common object files in the target Complex library
 #
 libz: $(COBJS)
-	ar rv $(ZLIBRARY) $(COBJS)
+	$(AR) rv $(ZLIBRARY) $(COBJS)
 	$(RANLIB) $(ZLIBRARY)
 
 #
