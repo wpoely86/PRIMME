@@ -130,7 +130,7 @@
         ! Read any initial comments from an MTX format
  10     read(infile, '(A)', END=996) title
         if (title(1:1) .eq. '%') goto 10
-        i = lnblnk(title)
+        i = len_trim(title)
         print*, i
         read (title(1:i), *), n
         print*, title(1:i), '    ',n
